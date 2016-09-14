@@ -10,8 +10,37 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
 		</noscript><!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]--><!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]--><!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
+
+		<style>
+        /* Paste this css to your style sheet file or under head tag */
+        /* This only works with JavaScript, 
+        if it's not present, don't show loader */
+        .no-js #loader { display: none;  }
+        .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(images/loader-64x/Preloader_3.gif) center no-repeat #fff;
+}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script>
+    //paste this code under head tag or in a seperate js file.
+    // Wait for window load
+    $(window).load(function() {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");;
+    });
+</script>
 </head>
 <body onload="getLocation()"><!-- Nav -->
+	<div class="se-pre-con"></div>
 <nav id="nav">
 <ul class="container">
 	<li><a href="#top">Top</a></li>
@@ -50,7 +79,7 @@ And this is my professional <strong>HUB</strong>, you can know more about my Ski
 <div class="container">
 <div class="row">
 <div class="4u">
-<section class="box box-style1"><img alt="EPR" src="images/web.jpg" width="150px" />
+<section class="box box-style1"><img alt="EPR" src="images/web.png" width="150px" />
 <h3 style="color:#A2C937;">WEB Applications</h3>
 
 <p>Delivering a complex system with a simple solution &mdash; develop powerful web applications scalable to heavy lifting.</p>
@@ -66,7 +95,7 @@ And this is my professional <strong>HUB</strong>, you can know more about my Ski
 </div>
 
 <div class="4u">
-<section class="box box-style1"><img alt="Gateway" height="100px" src="images/mobile_apps.jpg" width="150px" />
+<section class="box box-style1"><img alt="Gateway" src="images/mobile_apps.png" width="150px" />
 <h3 style="color:#A2C937;">MOBILE Applications</h3>
 
 <p>Develop custom, native mobile app. Cross-platform Mobile app, secure back-end with a rich UI.</p>
@@ -219,11 +248,35 @@ Reporting Tools : <i>Jasper Report</i></span><br />
 <span>Mobile No. 9766931776</span></header>
 
 <div>
+<div class="row">
+<div class="12u">
+<form action="#" method="post">
+<div>
+<div class="row half">
+<div class="6u"><input id="name" name="name" placeholder="Name" type="text" /></div>
 
+<div class="6u"><input id="email" name="email" placeholder="Email" type="text" /></div>
+</div>
+
+<div class="row half">
+<div class="12u"><input id="subject" name="subject" placeholder="Subject" type="text" /></div>
+</div>
+
+<div class="row half">
+<div class="12u"><textarea id="message" name="message" placeholder="Message"></textarea></div>
+</div>
+
+<div class="row">
+<div class="12u"><a class="button form-button-submit" href="#">Send Message</a> <a class="button button-alt form-button-reset" href="#">Clear Form</a></div>
+</div>
+</div>
+</form>
+</div>
+</div>
 
 <div class="row">
 <div class="12u">
-<hr />
+ 
 <h3>Find me on ...</h3>
 
 <div><a class="twitter-timeline" data-dnt="true" data-widget-id="490414852263788544" href="https://twitter.com/saiinfocorp">Tweets by @sachinkhendake</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
@@ -231,13 +284,9 @@ Reporting Tools : <i>Jasper Report</i></span><br />
 <div></div>
 
 <ul class="social">
-	<li class="twitter" title="Catch me on Twitter"><a href="https://twitter.com/sachinkhendake"><span>Twitter</span></a></li>
-	<li class="facebook" title="Catch me on Facebook"><a class="fa fa-facebook" href="https://www.facebook.com/er.sachink"><span>Facebook</span></a></li>
-	<li class="dribbble" title="Catch me on Dribbble"><a class="fa fa-dribbble" href="http://dribbble.com/n33"><span>Dribbble</span></a></li>
-	<li class="linkedin" title="Catch me on LinkedIn"><a class="fa fa-linkedin" href="http://in.linkedin.com/pub/sachin-khendake/37/28/336/"><span>LinkedIn</span></a></li>
-	<li class="tumblr" title="Catch me on Tumblr"><a class="fa fa-tumblr" href="#"><span>Tumblr</span></a></li>
-	<li class="googleplus" title="Catch me on Google+"><a class="fa fa-google-plus" href="https://plus.google.com/109601928729786524168"><span>Google+</span></a></li>
-	<li class="github" title="Catch me on Github"><a class="fa fa-github" href="https://github.com/skhendake"><span>Github</span></a></li>
+	<li class="facebook" title="Catch me on Facebook"><a class="fa fa-facebook" href="https://www.facebook.com/er.sachink" target="_blank"><span>Facebook</span></a></li>	
+	<li class="linkedin" title="Catch me on LinkedIn"><a class="fa fa-linkedin" href="https://www.linkedin.com/in/sachinkhendake" target="_blank"><span>LinkedIn</span></a></li>
+	<li class="github" title="Catch me on Github"><a class="fa fa-github" href="https://github.com/skhendake" target="_blank"><span>Github</span></a></li>
 	<!--
 									<li class="rss"><a href="#" class="fa fa-rss"><span>RSS</span></a></li>
 									<li class="instagram"><a href="#" class="fa fa-instagram"><span>Instagram</span></a></li>
